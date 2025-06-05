@@ -25,7 +25,7 @@ sudo npm install -g pm2
 
 echo "Cloning PHP (CodeIgniter) backend..."
 cd /var/www
-sudo git clone https://github.com/vndamodar/qapin_backend_v2.0.git
+sudo git clone git clone https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com/vndamodar/qapin_backend_v2.0.git
 sudo chown -R apache:apache /var/www/qapin_backend_v2.0
 sudo chmod -R 755 /var/www/qapin_backend_v2.0
 
@@ -45,7 +45,7 @@ sudo systemctl restart httpd
 
 echo "Cloning Node.js backend..."
 cd /var/www
-sudo git clone https://github.com/vndamodar/node_1.O.git
+sudo git clone git clone https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com/vndamodar/node_1.O.git
 cd node_1.O
 npm install
 pm2 start server.js --name node_1.O
@@ -54,7 +54,7 @@ pm2 startup systemd | grep sudo | bash
 
 echo "Cloning and building Vue.js frontend..."
 cd /var/www
-sudo git clone https://github.com/vndamodar/Vue-Latest.git
+sudo git clone git clone https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com/vndamodar/Vue-Latest.git
 cd Vue-Latest
 npm install
 npm run build
